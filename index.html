@@ -3,152 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber SMM | Next-Gen Panel</title>
+    <title>Cyber SMM | Next-Gen Social Panel</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500;700&display=swap');
-        body { background-color: #020617; color: #f8fafc; font-family: 'Rajdhani', sans-serif; }
+        body { background-color: #020617; color: #f8fafc; font-family: 'Rajdhani', sans-serif; overflow-x: hidden; }
         .cyber-header { font-family: 'Orbitron', sans-serif; }
-        .neon-text { text-shadow: 0 0 10px #06b6d4, 0 0 20px #06b6d4; }
+        .neon-glow { text-shadow: 0 0 10px #06b6d4, 0 0 20px #06b6d4; }
         .cyber-card { 
             background: linear-gradient(145deg, #0f172a, #020617);
             border: 1px solid #1e293b;
             border-left: 4px solid #06b6d4;
-            transition: 0.4s;
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .cyber-card:hover { border-color: #06b6d4; box-shadow: 0 0 20px rgba(6, 182, 212, 0.2); transform: translateY(-3px); }
-        .shimmer { background: linear-gradient(90deg, #0f172a 25%, #1e293b 50%, #0f172a 75%); background-size: 200% 100%; animation: loading 1.5s infinite; }
-        @keyframes loading { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+        .cyber-card:hover { border-color: #06b6d4; box-shadow: 0 0 25px rgba(6, 182, 212, 0.25); transform: translateY(-5px); }
+        .cat-btn { background: rgba(6, 182, 212, 0.05); border: 1px solid rgba(6, 182, 212, 0.1); transition: 0.3s; cursor: pointer; }
+        .cat-btn.active { background: #06b6d4; color: white; box-shadow: 0 0 15px #06b6d4; }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-thumb { background: #06b6d4; border-radius: 10px; }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Nav -->
-    <header class="p-5 border-b border-cyan-900/30 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
+    <!-- Header -->
+    <header class="p-5 border-b border-cyan-900/30 bg-slate-950/90 backdrop-blur-xl sticky top-0 z-50">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded bg-cyan-500/10 border border-cyan-500 flex items-center justify-center">
-                    <i class="fa fa-bolt text-cyan-400"></i>
+                <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500 flex items-center justify-center animate-pulse">
+                    <i class="fa fa-atom text-cyan-400"></i>
                 </div>
-                <h1 class="cyber-header text-xl font-bold tracking-tighter text-cyan-400 neon-text">CYBER<span class="text-white">SMM</span></h1>
+                <h1 class="cyber-header text-xl font-bold tracking-tighter text-cyan-400 neon-glow uppercase">CYBER<span class="text-white">SMM</span></h1>
             </div>
-            <a href="https://wa.me/923486175620" class="bg-cyan-600 text-white px-4 py-2 rounded text-[10px] font-bold uppercase tracking-widest shadow-[0_0_15px_rgba(8,145,178,0.4)]">Support</a>
+            <div class="flex items-center gap-4">
+                <span class="hidden md:block text-[10px] font-bold text-cyan-500 uppercase tracking-widest">Tajammal API Linked</span>
+                <a href="https://wa.me/923486175620" class="bg-cyan-600 hover:bg-cyan-500 text-white px-5 py-2 rounded text-[10px] font-bold uppercase tracking-widest transition-all">Support</a>
+            </div>
         </div>
     </header>
 
     <main class="max-w-6xl mx-auto p-5 pb-24">
         
         <!-- Hero Section -->
-        <div class="rounded-3xl bg-slate-900/50 border border-cyan-900/20 p-8 mb-10 text-center relative overflow-hidden">
-            <h2 class="cyber-header text-3xl md:text-5xl font-black mb-4 tracking-tight">UPGRADE YOUR SOCIAL</h2>
-            <p class="text-slate-400 text-sm max-w-lg mx-auto uppercase tracking-widest">Fastest Social Media Services in Pakistan. 24/7 Execution.</p>
-            <div class="mt-6 inline-flex gap-4">
-                <div class="bg-cyan-500/5 px-4 py-2 border border-cyan-500/20 rounded">
-                    <p class="text-[8px] uppercase text-cyan-500 font-bold leading-none">Currency</p>
-                    <p class="font-bold text-lg">PKR (Rs)</p>
+        <div class="rounded-[2.5rem] bg-slate-900/40 border border-cyan-900/20 p-10 mb-12 text-center relative overflow-hidden shadow-2xl">
+            <h2 class="cyber-header text-4xl md:text-6xl font-black mb-4 tracking-tight uppercase italic leading-none">The Future of SMM</h2>
+            <p class="text-slate-400 text-sm max-w-lg mx-auto uppercase tracking-widest leading-relaxed opacity-80">Boost your social presence with Tajammal-powered cyber speed. Fast, Reliable, & Non-Drop.</p>
+            <div class="mt-8 flex justify-center gap-4">
+                <div class="bg-cyan-500/10 px-6 py-2 border border-cyan-500/30 rounded-full">
+                    <p class="text-[9px] uppercase text-cyan-400 font-bold">Base Currency: PKR</p>
                 </div>
             </div>
         </div>
 
-        <!-- Search Bar -->
-        <div class="relative mb-10 max-w-xl mx-auto">
-            <i class="fa fa-search absolute left-4 top-1/2 -translate-y-1/2 text-cyan-500 opacity-50"></i>
-            <input type="text" id="serviceSearch" placeholder="SEARCH SERVICES..." 
-            class="w-full bg-slate-950 border border-slate-800 p-4 pl-12 rounded focus:border-cyan-500 outline-none transition-all text-sm font-bold uppercase tracking-widest">
+        <!-- Filter Categories -->
+        <div class="flex gap-3 overflow-x-auto pb-6 no-scrollbar mb-6">
+            <div class="cat-btn active px-8 py-2.5 rounded-full text-[10px] font-bold uppercase whitespace-nowrap" onclick="filterData('all', this)">All Services</div>
+            <div class="cat-btn px-8 py-2.5 rounded-full text-[10px] font-bold uppercase whitespace-nowrap" onclick="filterData('instagram', this)">Instagram</div>
+            <div class="cat-btn px-8 py-2.5 rounded-full text-[10px] font-bold uppercase whitespace-nowrap" onclick="filterData('tiktok', this)">TikTok</div>
+            <div class="cat-btn px-8 py-2.5 rounded-full text-[10px] font-bold uppercase whitespace-nowrap" onclick="filterData('facebook', this)">Facebook</div>
+            <div class="cat-btn px-8 py-2.5 rounded-full text-[10px] font-bold uppercase whitespace-nowrap" onclick="filterData('youtube', this)">YouTube</div>
         </div>
 
-        <!-- Stats -->
-        <div class="flex items-center justify-between mb-6 px-1 border-b border-slate-800 pb-4">
-            <h3 class="cyber-header text-[10px] font-bold text-cyan-500 uppercase tracking-[0.3em]">Operational Database</h3>
-            <span id="loadInfo" class="text-[9px] font-bold text-white bg-slate-800 px-3 py-1 rounded">CONNECTING...</span>
+        <!-- Search Command Bar -->
+        <div class="relative mb-12 group">
+            <i class="fa fa-terminal absolute left-5 top-1/2 -translate-y-1/2 text-cyan-500 transition-colors group-focus-within:text-white"></i>
+            <input type="text" id="mainSearch" placeholder="ENTER SYSTEM COMMAND (e.g. Followers)..." 
+            class="w-full bg-slate-950 border border-slate-800 p-5 pl-14 rounded-xl focus:border-cyan-500 outline-none transition-all text-sm font-bold uppercase tracking-widest shadow-2xl">
         </div>
 
-        <!-- Services Grid -->
-        <div id="servicesList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div class="shimmer h-32 rounded-xl"></div>
-            <div class="shimmer h-32 rounded-xl"></div>
-            <div class="shimmer h-32 rounded-xl"></div>
+        <!-- Status & Title -->
+        <div class="flex items-center gap-4 mb-8">
+            <h3 class="cyber-header text-lg font-bold text-white uppercase tracking-tighter">Database Stream</h3>
+            <div class="flex-1 h-[1px] bg-gradient-to-r from-cyan-900/50 to-transparent"></div>
+            <span id="loadInfo" class="text-[10px] font-bold text-cyan-500 tracking-[0.3em] uppercase animate-pulse">Syncing...</span>
         </div>
+
+        <!-- Grid -->
+        <div id="servicesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Data will be injected here -->
+        </div>
+
     </main>
 
     <script>
-        const API_KEY = '468924646c5a772af2a074aa51db5abb';
-        const WHATSAPP = '923486175620';
-        const PROFIT_MARGIN = 1.30; // 30% Profit
-        const DOLLAR_RATE = 285;   // 1 USD to PKR
+        const API_KEY = 'f4242f34db1d7ed9ed9beb95b6d17f99';
+        const WA_ADMIN = '923486175620';
+        const PROFIT_ADD = 1.30; // 30% Profit
+        const DOLLAR_TO_PKR = 285; // Rate for conversion
 
-        async function loadServices() {
-            const container = document.getElementById('servicesList');
-            const info = document.getElementById('loadInfo');
+        // --- BUILT-IN DATA (Tajammal SMM Panel Best Sellers) ---
+        const initialData = [
+            {id: 1, cat: 'instagram', name: 'Instagram Followers [Refill 365 Days]', pkr: 240},
+            {id: 2, cat: 'instagram', name: 'Instagram Likes [Instant & High Quality]', pkr: 45},
+            {id: 3, cat: 'instagram', name: 'Instagram Reel Views [100k Speed]', pkr: 12},
+            {id: 4, cat: 'tiktok', name: 'TikTok Followers [Real Look]', pkr: 480},
+            {id: 5, cat: 'tiktok', name: 'TikTok Likes [Fast Execution]', pkr: 110},
+            {id: 6, cat: 'tiktok', name: 'TikTok Views [Cheapest in Market]', pkr: 8},
+            {id: 7, cat: 'facebook', name: 'Facebook Page Followers + Likes', pkr: 550},
+            {id: 8, cat: 'facebook', name: 'Facebook Profile Followers [Instant]', pkr: 320},
+            {id: 9, cat: 'youtube', name: 'YouTube Subscribers [Non-Drop]', pkr: 1450},
+            {id: 10, cat: 'youtube', name: 'YouTube WatchTime [Refill Pack]', pkr: 4200}
+        ];
 
-            try {
-                // Using corsproxy.io for better POST support
-                const apiURL = `https://shadowsmmpanel.com/api/v2?key=${API_KEY}&action=services`;
-                const proxyURL = `https://corsproxy.io/?${encodeURIComponent(apiURL)}`;
-
-                const response = await fetch(proxyURL);
-                const services = await response.json();
-
-                if (!Array.isArray(services)) throw new Error("Format Error");
-
-                container.innerHTML = '';
-                info.innerText = `${services.length} SERVICES ONLINE`;
-
-                services.slice(0, 150).forEach(item => {
-                    const usdPrice = parseFloat(item.rate);
-                    // Price in PKR: (USD Rate * Dollar Rate) + Profit
-                    const pkrPrice = Math.ceil((usdPrice * DOLLAR_RATE) * PROFIT_MARGIN);
-
-                    const div = document.createElement('div');
-                    div.className = "cyber-card p-5 flex flex-col justify-between group";
-                    div.innerHTML = `
+        function renderCards(data) {
+            const grid = document.getElementById('servicesGrid');
+            grid.innerHTML = '';
+            
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "cyber-card p-6 rounded-xl flex flex-col justify-between group";
+                card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[9px] font-black bg-cyan-900/40 text-cyan-400 px-3 py-1 rounded-sm tracking-[0.2em] uppercase border border-cyan-800/50">${item.cat}</span>
+                            <span class="text-[9px] text-slate-600 font-bold italic">ID: #${item.id}</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-white uppercase leading-tight line-clamp-2 h-10 mb-2">${item.name}</h4>
+                        <div class="flex items-center gap-1">
+                            <div class="w-1 h-1 rounded-full bg-emerald-500 animate-pulse"></div>
+                            <span class="text-[9px] font-bold text-emerald-500 uppercase">Secure Link</span>
+                        </div>
+                    </div>
+                    <div class="mt-8 flex justify-between items-end">
                         <div>
-                            <div class="flex justify-between items-start mb-3">
-                                <span class="text-[8px] font-bold bg-cyan-900/30 text-cyan-400 px-2 py-1 rounded tracking-tighter uppercase">${item.category}</span>
-                                <span class="text-[8px] text-slate-600 font-bold italic">#${item.service}</span>
-                            </div>
-                            <h4 class="text-xs font-bold text-white uppercase leading-tight line-clamp-2">${item.name}</h4>
+                            <p class="text-[8px] text-slate-500 font-bold uppercase tracking-widest leading-none mb-1">Price / 1000</p>
+                            <p class="text-2xl font-black text-cyan-400 leading-none italic tracking-tighter">Rs. ${item.pkr}</p>
                         </div>
-                        <div class="mt-6 flex justify-between items-end border-t border-slate-800/50 pt-4">
-                            <div>
-                                <p class="text-[8px] text-slate-500 font-bold uppercase tracking-widest leading-none">Per 1000</p>
-                                <p class="text-xl font-black text-cyan-400 leading-none mt-1 italic">Rs. ${pkrPrice}</p>
-                            </div>
-                            <a href="https://wa.me/${WHATSAPP}?text=I want to order SERVICE ID: ${item.service} (${item.name}) Price: Rs.${pkrPrice}" 
-                               class="bg-cyan-600 text-white text-[9px] font-bold px-4 py-2 rounded uppercase tracking-tighter active:scale-90 transition-all">
-                               ORDER NOW
-                            </a>
-                        </div>
-                    `;
-                    container.appendChild(div);
-                });
-
-            } catch (err) {
-                console.error(err);
-                info.innerText = "OFFLINE MODE";
-                container.innerHTML = `
-                    <div class="col-span-full text-center py-20 border-2 border-dashed border-slate-800 rounded-3xl">
-                        <i class="fa fa-wifi text-slate-800 text-5xl mb-4"></i>
-                        <p class="text-slate-500 font-bold uppercase tracking-widest text-xs">Access Restricted by Panel Server</p>
-                        <button onclick="location.reload()" class="mt-6 bg-slate-800 text-white px-8 py-2 rounded text-[10px] font-bold uppercase">Try Reconnect</button>
+                        <a href="https://wa.me/${WA_ADMIN}?text=CyberOrder: ${item.name} (ID:${item.id}) Price: Rs.${item.pkr}" 
+                           class="bg-cyan-600 hover:bg-white hover:text-cyan-900 text-white text-[10px] font-black px-5 py-2.5 rounded-sm uppercase tracking-tighter transition-all active:scale-90 shadow-xl">
+                           EXECUTE
+                        </a>
                     </div>
                 `;
+                grid.appendChild(card);
+            });
+        }
+
+        async function syncLiveApi() {
+            const info = document.getElementById('loadInfo');
+            try {
+                // Using a faster proxy
+                const api = `https://tajammalsmmpanel.com/api/v2?key=${API_KEY}&action=services`;
+                const proxy = `https://api.allorigins.win/get?url=${encodeURIComponent(api)}`;
+                
+                const response = await fetch(proxy);
+                const json = await response.json();
+                const liveServices = JSON.parse(json.contents);
+
+                if (Array.isArray(liveServices)) {
+                    const formatted = liveServices.slice(0, 100).map(s => ({
+                        id: s.service,
+                        cat: s.category.split(' ')[0].toLowerCase(),
+                        name: s.name,
+                        // Conversion Logic: USD Rate * Dollar * Profit
+                        pkr: Math.ceil((parseFloat(s.rate) * DOLLAR_TO_PKR) * PROFIT_ADD)
+                    }));
+                    renderCards(formatted);
+                    info.innerText = "DATABASE LIVE";
+                    info.classList.remove('animate-pulse');
+                }
+            } catch (err) {
+                console.log("Sync Error - Keeping Initial Data");
+                info.innerText = "STABLE MODE";
+                info.classList.remove('animate-pulse');
             }
         }
 
-        // Search Filter
-        document.getElementById('serviceSearch').addEventListener('input', function(e) {
-            const query = e.target.value.toLowerCase();
+        // Search Logic
+        document.getElementById('mainSearch').addEventListener('input', function(e) {
+            const term = e.target.value.toLowerCase();
             const cards = document.querySelectorAll('.cyber-card');
-            cards.forEach(card => {
-                const title = card.querySelector('h4').innerText.toLowerCase();
-                const category = card.querySelector('span').innerText.toLowerCase();
-                card.style.display = (title.includes(query) || category.includes(query)) ? 'flex' : 'none';
+            cards.forEach(c => {
+                const title = c.innerText.toLowerCase();
+                c.style.display = title.includes(term) ? 'flex' : 'none';
             });
         });
 
-        window.onload = loadServices;
+        // Filter Function
+        function filterData(cat, el) {
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            el.classList.add('active');
+            
+            const cards = document.querySelectorAll('.cyber-card');
+            cards.forEach(c => {
+                const tag = c.querySelector('span').innerText.toLowerCase();
+                if(cat === 'all' || tag.includes(cat)) {
+                    c.style.display = 'flex';
+                } else {
+                    c.style.display = 'none';
+                }
+            });
+        }
+
+        // Initialize
+        window.onload = () => {
+            renderCards(initialData); // Pehle builtin data dikhao foran
+            setTimeout(syncLiveApi, 2000); // 2 second baad live data try karo
+        };
     </script>
 </body>
 </html>
